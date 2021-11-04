@@ -8,11 +8,12 @@ from pathlib import Path
 Builder.load_file('design.kv')
 
 class LoginScreen(Screen):
-    # Points to "Sign Up" screen in design.kv file
+    # Points to <SignUpScreen> in design.kv file
     def sign_up(self):
         self.manager.transition.direction = 'left'
         self.manager.current = "sign_up_screen"
 
+    # Points to <LoginScreen> in design.kv file
     def login(self, uname, pword):
         with open('users.json', 'r') as file:
             users = json.load(file)
